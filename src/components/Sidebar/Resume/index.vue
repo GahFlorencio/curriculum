@@ -52,7 +52,9 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Whatsapp: </span>
-        <span class="text-xs text-drakula-purple"><a href="https://wa.me/5516997860060">16997860060</a></span>
+        <span class="text-xs text-drakula-purple"
+          ><a href="https://wa.me/5516997860060">16997860060</a></span
+        >
       </span>
     </li>
 
@@ -67,7 +69,10 @@
         <span class="text-xs text-drakula-purple">gjfc@live.com</span>
       </span>
     </li>
-     <li class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2 border-t-2 border-drakula-current mt-2 pt-2">
+    <li
+      @click="scrollFunction('#about')"
+      class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2 border-t-2 border-drakula-current mt-2 pt-2"
+    >
       <span class="w-4">
         <font-awesome-icon
           class="text-drakula-green text-md  mt-1"
@@ -75,20 +80,23 @@
       /></span>
       <span class="w-full pl-4">
         <span class="text-sm font-bold  mr-1">About</span>
-        
       </span>
     </li>
-     <li class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2">
+    <li
+      @click="scrollFunction('#missions')"
+      class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2"
+    >
       <span class="w-4">
-        <font-awesome-icon
-          class="text-drakula-green text-md  mt-1"
-          icon="map"
+        <font-awesome-icon class="text-drakula-green text-md  mt-1" icon="map"
       /></span>
       <span class="w-full pl-4">
         <span class="text-sm font-bold  mr-1">Missions</span>
       </span>
     </li>
-     <li class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2">
+    <li
+      @click="scrollFunction('#skills')"
+      class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2"
+    >
       <span class="w-4">
         <font-awesome-icon
           class="text-drakula-green text-md  mt-1"
@@ -98,7 +106,10 @@
         <span class="text-sm font-bold  mr-1">Skills</span>
       </span>
     </li>
-       <li class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2">
+    <li
+      @click="scrollFunction('#achievements')"
+      class="text-drakula-purple hover:text-drakula-green  cursor-pointer flex item-center justify-center px-2"
+    >
       <span class="w-4">
         <font-awesome-icon
           class="text-drakula-green text-md  mt-1"
@@ -114,5 +125,11 @@
 <script>
 export default {
   name: "Resume",
+  methods: {
+    scrollFunction(id) {
+      let element = document.querySelector(id);
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+  },
 };
 </script>
