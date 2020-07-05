@@ -67,14 +67,14 @@ export default {
     },
     async getMissions() {
       await fetch(
-        "http://my-json-server.typicode.com/GahFlorencio/fake_api_json_test/missions"
+        "https://my-json-server.typicode.com/GahFlorencio/fake_api_json_test/missions"
       )
         .then((response) => response.json())
         .then((data) => (this.missions = data));
     },
     async getSkills() {
       await fetch(
-        "http://my-json-server.typicode.com/GahFlorencio/fake_api_json_test/skills"
+        "https://my-json-server.typicode.com/GahFlorencio/fake_api_json_test/skills"
       )
         .then((response) => response.json())
         .then(
