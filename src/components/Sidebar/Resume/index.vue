@@ -8,7 +8,7 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Level: </span>
-        <span class="text-xs text-drakula-purple">25</span>
+        <span class="text-xs text-drakula-purple">{{ age }}</span>
       </span>
     </li>
     <li class="flex item-center justify-center px-1">
@@ -19,7 +19,7 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Kingdom: </span>
-        <span class="text-xs text-drakula-purple">Ribeirão Preto</span>
+        <span class="text-xs text-drakula-purple">{{kingdom}}</span>
       </span>
     </li>
     <li class="flex item-center justify-center px-1">
@@ -30,7 +30,7 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Province: </span>
-        <span class="text-xs text-drakula-purple">São Paulo</span>
+        <span class="text-xs text-drakula-purple">{{ province }}</span>
       </span>
     </li>
     <li class="flex item-center justify-center px-1">
@@ -41,7 +41,7 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Class: </span>
-        <span class="text-xs text-drakula-purple">Full Stack</span>
+        <span class="text-xs text-drakula-purple">{{ classDev }}</span>
       </span>
     </li>
     <li class="flex item-center justify-center px-1">
@@ -53,7 +53,7 @@
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Whatsapp: </span>
         <span class="text-xs text-drakula-purple"
-          ><a href="https://wa.me/5516997860060">16997860060</a></span
+          ><a href="https://wa.me/5516997860060">{{cellphone}}</a></span
         >
       </span>
     </li>
@@ -66,7 +66,7 @@
       /></span>
       <span class="w-full pl-2">
         <span class="text-xs font-bold text-drakula-yellow ">Mail: </span>
-        <span class="text-xs text-drakula-purple">gjfc@live.com</span>
+        <span class="text-xs text-drakula-purple">{{ mail }}</span>
       </span>
     </li>
     <li
@@ -125,11 +125,19 @@
 <script>
 export default {
   name: "Resume",
+  props: ["province", "kingdom", "mail" , "classDev", "cellphone"],
+  computed:{
+    age(){
+      const birthday = new Date('1995-02-12');
+      const today =  new Date();
+			return Math.floor((today.getTime() - birthday.getTime()) / (365 * 24 * 60 * 60 * 1000))
+    }
+  },
   methods: {
     scrollFunction(id) {
       let element = document.querySelector(id);
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-    },
+    },    
   },
 };
 </script>

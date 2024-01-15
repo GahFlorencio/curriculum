@@ -11,20 +11,6 @@
 <script>
 export default {
   name: "Avatar",
-  data: () => {
-    return {
-      picture: null,
-    };
-  },
-  methods: {
-    getUserPicture() {
-      fetch("https://api.github.com/users/gahflorencio")
-        .then((response) => response.json())
-        .then((data) => this.picture = data.avatar_url);
-    },
-  },
-  created(){
-    this.getUserPicture();
-  }
+  props: ["picture"]
 };
 </script>
